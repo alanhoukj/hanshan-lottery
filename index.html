@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>寒山2017 - 新年抽奖</title>
+    <title>2018 - Lucky Draw</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animate.css">
 </head>
@@ -13,27 +13,26 @@
 <!--左侧中奖名单展示-->
 <aside class="aside-left">
     <div class="aside-main" id="mingdan-con">
-        <div class="btn btn-red-outline" data-toggle="modal" id="mingdan-title">中奖名单</div>
+        <div class="btn btn-red-outline" data-toggle="modal" id="mingdan-title">Winners</div>
         <div class="award-main">
             <div id="award-123">
                 <div class="award-con" id="award-01">
-                    <h3 class="award-title">一等奖</h3>
+                    <h3 class="award-title">1st award</h3>
                     <ul class="win"></ul>
                 </div>
                 <div class="award-con" id="award-02">
-                    <h3 class="award-title">二等奖</h3>
+                    <h3 class="award-title">2rd award</h3>
                     <ul class="win"></ul>
                 </div>
                 <div class="award-con" id="award-03">
-                    <h3 class="award-title">三等奖</h3>
+                    <h3 class="award-title">3nd award</h3>
                     <ul class="win"></ul>
                 </div>
             </div>
-            <div class="award-con" id="award-04">
+            <!-- <div class="award-con" id="award-04">
                 <h3 class="award-title">纪念奖</h3>
                 <ul class="win"></ul>
-            </div>
-            <a href="javascript:;" id="award04-toggle" class="more">查看更多</a>
+            </div> -->
         </div>
     </div>
     <img src="./img/lantern.png" alt="" width="85" id="mingdan" class="switch">
@@ -100,7 +99,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="award-con">
+            <!-- <div class="award-con">
                 <h3 class="award-title">纪念奖</h3>
                 <ul class="win">
                     <li class="clearfix win-li">
@@ -128,7 +127,7 @@
                         <div class="f-l name">乐扣马克保温杯</div>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
     <img src="./img/lantern.png" alt="" width="85" id="liwu" class="switch">
@@ -171,11 +170,11 @@
 
         <!--抽奖按钮-->
         <div class="dashboard">
-            <div class="cirle-btn award" id="award-1" data-award="1">一</div>
-            <div class="cirle-btn award" id="award-2" data-award="2">二</div>
-            <div class="btn btn-red-outline lottery-btn" id="lottery-btn" data-award="">开始抽奖</div>
-            <div class="cirle-btn award" id="award-3" data-award="3">三</div>
-            <div class="cirle-btn award" id="award-4" data-award="4">纪</div>
+            <div class="cirle-btn award" id="award-1" data-award="1">1</div>
+            <div class="cirle-btn award" id="award-2" data-award="2">2</div> 
+            <div class="btn btn-red-outline lottery-btn" id="lottery-btn" data-award="">Start</div>
+            <div class="cirle-btn award" id="award-3" data-award="3">3</div>
+            <!-- <div class="cirle-btn award" id="award-4" data-award="4">纪</div> -->
         </div>
     </div>
 </div>
@@ -223,13 +222,13 @@
 <!-- 中奖者数据展示模板 end -->
 
 <!--音乐开关-->
-<a id="music-control" class="animated infinite bounce" href="javascript:;" data-open="1"></a>
+<!-- <a id="music-control" class="animated infinite bounce" href="javascript:;" data-open="1"></a> -->
 <!--清除数据开关-->
 <a id="clear-control" href="javascript:;" data-open="1"></a>
 
-<audio id="music" loop="loop" preload="auto" src="shiji.mp3">
+<!-- <audio id="music" loop="loop" preload="auto" src="shiji.mp3">
     你的浏览器不支持audio标签
-</audio>
+</audio> -->
 
 <script type="text/javascript" src="./js/underscore.js"></script>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -321,7 +320,7 @@
             $('#award-03 .win').append(award_dom)
         });
     }
-    if (local_handle.get("award_4")) {
+/*    if (local_handle.get("award_4")) {
         $('#award04-toggle').css('display', 'inline-block');
         var award4_storage = window.localStorage.getItem('award_4');
         var award4_datas = JSON.parse(award4_storage);
@@ -330,7 +329,7 @@
             var award_dom = substitute(award_tpl, val);
             $('#award-04 .win').append(award_dom)
         });
-    }
+    }*/
 
 
     // ---------------- 抽奖动画相关参数配置 ------------
@@ -413,30 +412,30 @@
         // 在进入本轮抽奖逻辑后，开启本轮抽奖锁
         isLock = true;
         // 设置抽奖按钮状态
-        lottery_btn.text('正在滚动 ^_^');
+        lottery_btn.text('Rolling...');
         lottery_btn.css('background', '#FFBFB7');
 
-        setout_time = setTimeout(function () {
+  /*      setout_time = setTimeout(function () {
             speed = 15;
-        }, 1000);
+        }, 100);
 
         setout_time = setTimeout(function () {
             speed = 20;
-        }, 3000);
+        }, 300);
 
         setout_time = setTimeout(function () {
             speed = 30;
-        }, 5000);
+        }, 500);
         setout_time = setTimeout(function () {
             speed = 50;
-        }, 7000);
+        }, 700);*/
         setout_time = setTimeout(function () {
-            speed = 90;
-            $('#lottery-btn').text('可抽奖啦 @_@');
+            speed = 10;
+            $('#lottery-btn').text('Click to Stop');
             // 当速度达到最终的设置峰值是，isLock 将会解锁，此时，才可以停止动画
             isLock = false;
             clearTimeout(setout_time);
-        }, 9000);
+        }, 0);
     }
 
     // 结束抽奖
@@ -445,7 +444,7 @@
 
         // 当isLock 锁还没解锁时， 此时不能停止抽奖，将会抛出没结束的异常
         if (isLock) {
-            console.log('还没结束，请稍等...');
+            console.log("It's rolling , please wait...");
             return;
         }
         isStart = false;
@@ -454,20 +453,22 @@
 
         /*-------- 手动停止的方案 --------*/
         // 得到当前所在高度值
-//        var stop_top = $('#lottery-wrap').css('top');
-//        // 将当前高度值转换为绝对正值
-//        stop_top = Math.abs(parseInt(stop_top));
-//        // 对当前高度值取余
-//        var left_height = item_outer_height - stop_top % item_outer_height;
-//        // 剩下的尺寸
-//        var left_distance = left_height + left_center_top;
-//        // 最终停下来的所在高度
-//        var end_top = stop_top + left_distance;
-//        // 最终定位到第几个对话框的索引
-//        var sure_index = Math.floor((end_top + item_height % 2) / item_height) + 1;
+       var stop_top = $('#lottery-wrap').css('top');
+       // 将当前高度值转换为绝对正值
+       stop_top = Math.abs(parseInt(stop_top));
+       // 对当前高度值取余
+       var left_height = item_outer_height - stop_top % item_outer_height;
 
-        /*-------- 随机数欺骗停止方案 --------*/
-        // 获取当前总的抽奖框
+       // 剩下的尺寸
+       var left_distance = left_height + left_center_top;
+       // 最终停下来的所在高度
+       var end_top = stop_top + left_distance;
+       // 最终定位到第几个对话框的索引
+       var sure_index = Math.floor((end_top + item_height % 2) / item_height) + 1;
+
+
+        /*-------- 随机数停止方案 --------*/
+      /*  // 获取当前总的抽奖框
         var lottery_size = $('#lottery-wrap .lottery-list').size();
         // 随机生成停止位置的索引
         var stop_index = Math.floor(Math.random() * (lottery_size - 4));
@@ -478,7 +479,8 @@
 
         // 停止动画时要走的距离，即再走三个索引（即两个框+半个框的距离）
         var left_distance = Math.floor(item_outer_height*2 + (item_outer_height - item_height));
-        var sure_index = stop_index + 4;
+        var sure_index = stop_index + 4;*/
+
 
         // 移动到要到达的指定位置
         var lastStep = function() {
@@ -515,7 +517,7 @@
         var top = 0;
         var time02 = null;
         // 最后的倒计时
-        $('.stop-main').fadeIn();
+/*        $('.stop-main').fadeIn();
 //        $('#stop-time').fadeIn();
         var stop_time = setTimeout(function() {
             $('#stop-time').fadeIn();
@@ -530,7 +532,7 @@
             $('#stop-time').fadeOut();
             clearTimeout(stop_time);
             $('.stop-main').hide();
-        }, 2500);
+        }, 2500);*/
 
         // 向 localstorage 中写入中奖人数据
         var local_award = local_handle.get('award_'+award);
@@ -645,7 +647,7 @@
         });
         
         // 音乐开关
-        var music_local = (local_handle.get('music') == '') ? '1' : local_handle.get('music');
+        /*var music_local = (local_handle.get('music') == '') ? '1' : local_handle.get('music');
         var music_config = {
             music: document.getElementById('music'),
             music_bool: (music_local == '1'),
@@ -676,7 +678,7 @@
             } else {
                 music_config.play();
             }
-        });
+        });*/
 
         // 清除数据开关
         $('#clear-control').click(function () {

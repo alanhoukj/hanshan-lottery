@@ -103,9 +103,8 @@ var lottery_initial_datas =[
 
 var award_config = {
     "award01": 1,
-    "award02": 3,
-    "award03": 6,
-    "award04": 20
+    "award02": 2,
+    "award03": 100
 };
 
 // 初始化数据
